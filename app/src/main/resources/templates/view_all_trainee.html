@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns ="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Trainees</title>
+    <link th:href="@{/css/view_all_trainee.css}" rel="stylesheet" />
+</head>
+<body>
+<h1>All Trainees</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Address</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="trainee: ${TraineeList}">
+        <td th:text="${trainee.id}"></td>
+        <td th:text="${trainee.name}"></td>
+        <td th:text="${trainee.phone}"></td>
+        <td th:text="${trainee.address}"></td>
+    </tr>
+    </tbody>
+</table>
+<form action="traineeForm">
+    <button type="submit">Add Trainee</button>
+</form>
+</body>
+</html>
